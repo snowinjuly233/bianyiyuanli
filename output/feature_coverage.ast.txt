@@ -1,0 +1,83 @@
+Program
+\- Declarations
+   |- VarDecl name="seed" type=int
+   |  \- Initializer
+   |     \- IntegerLiteralExpr value=1
+   |- FunctionDecl name="twice" return=int
+   |  |- Parameters
+   |  |  \- ParameterDecl name="x" type=int
+   |  \- Body
+   |     \- BlockStmt
+   |        \- Statements
+   |           \- ReturnStmt
+   |              \- BinaryExpr op="+"
+   |                 |- Left
+   |                 |  \- IdentifierExpr name="x"
+   |                 \- Right
+   |                    \- IdentifierExpr name="x"
+   \- FunctionDecl name="main" return=int
+      |- Parameters
+      \- Body
+         \- BlockStmt
+            \- Statements
+               |- DeclStmt
+               |  \- VarDecl name="x" type=int
+               |     \- Initializer
+               |        \- IdentifierExpr name="seed"
+               |- DeclStmt
+               |  \- VarDecl name="y" type=int
+               |     \- Initializer
+               |        \- UnaryExpr op="-"
+               |           \- IdentifierExpr name="x"
+               |- ExprStmt
+               |  \- AssignExpr target="y"
+               |     \- CallExpr callee="twice"
+               |        \- Arguments
+               |           \- BinaryExpr op="+"
+               |              |- Left
+               |              |  \- IdentifierExpr name="y"
+               |              \- Right
+               |                 \- IntegerLiteralExpr value=3
+               |- IfStmt
+               |  |- Condition
+               |  |  \- UnaryExpr op="!"
+               |  |     \- IdentifierExpr name="y"
+               |  |- Then
+               |  |  \- BlockStmt
+               |  |     \- Statements
+               |  |        \- ExprStmt
+               |  |           \- AssignExpr target="y"
+               |  |              \- BinaryExpr op="+"
+               |  |                 |- Left
+               |  |                 |  \- IdentifierExpr name="y"
+               |  |                 \- Right
+               |  |                    \- IntegerLiteralExpr value=1
+               |  \- Else
+               |     \- BlockStmt
+               |        \- Statements
+               |           \- ExprStmt
+               |              \- AssignExpr target="y"
+               |                 \- BinaryExpr op="*"
+               |                    |- Left
+               |                    |  \- IdentifierExpr name="y"
+               |                    \- Right
+               |                       \- IntegerLiteralExpr value=2
+               |- WhileStmt
+               |  |- Condition
+               |  |  \- BinaryExpr op=">"
+               |  |     |- Left
+               |  |     |  \- IdentifierExpr name="y"
+               |  |     \- Right
+               |  |        \- IntegerLiteralExpr value=0
+               |  \- Body
+               |     \- BlockStmt
+               |        \- Statements
+               |           \- ExprStmt
+               |              \- AssignExpr target="y"
+               |                 \- BinaryExpr op="-"
+               |                    |- Left
+               |                    |  \- IdentifierExpr name="y"
+               |                    \- Right
+               |                       \- IntegerLiteralExpr value=1
+               \- ReturnStmt
+                  \- IdentifierExpr name="y"

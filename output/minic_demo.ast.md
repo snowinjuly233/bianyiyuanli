@@ -1,0 +1,32 @@
+# AST
+
+- `Program`
+  - `Declarations`
+    - `FunctionDecl name="main" return=int`
+      - `Parameters`
+      - `Body`
+        - `BlockStmt`
+          - `Statements`
+            - `DeclStmt`
+              - `VarDecl name="x" type=int`
+            - `ExprStmt`
+              - `AssignExpr target="x"`
+                - `BinaryExpr op="+"`
+                  - `Left`
+                    - `IntegerLiteralExpr value=3`
+                  - `Right`
+                    - `IntegerLiteralExpr value=4`
+            - `IfStmt`
+              - `Condition`
+                - `BinaryExpr op=">="`
+                  - `Left`
+                    - `IdentifierExpr name="x"`
+                  - `Right`
+                    - `IntegerLiteralExpr value=7`
+              - `Then`
+                - `BlockStmt`
+                  - `Statements`
+                    - `ReturnStmt`
+                      - `IdentifierExpr name="x"`
+            - `ReturnStmt`
+              - `IntegerLiteralExpr value=0`

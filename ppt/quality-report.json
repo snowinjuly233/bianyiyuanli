@@ -1,0 +1,24 @@
+{
+  "workspace": "E:\\bianyiyuanli2\\bianyiyuanli\\compiler-lab\\submission\\presentation-workspace",
+  "pptx": "E:\\bianyiyuanli2\\bianyiyuanli\\compiler-lab\\submission\\presentation-workspace\\output\\output.pptx",
+  "checks": {
+    "pptx_package": {
+      "slide_count": 9,
+      "media_count": 0,
+      "chart_count": 0,
+      "zero_byte_media": [],
+      "invalid_png_media": [],
+      "placeholder_text": [],
+      "debug_line_colors": [],
+      "slide_numbers": [],
+      "warnings": [],
+      "failures": []
+    },
+    "output_hygiene": {
+      "output_dir": "E:\\bianyiyuanli2\\bianyiyuanli\\compiler-lab\\submission\\presentation-workspace\\output",
+      "unexpected_files": []
+    }
+  },
+  "failures": [],
+  "warnings": []
+}
