@@ -254,6 +254,7 @@ GrammarBundle build_grammar(const compilerlab::seuyacc::YaccSpec& spec,
         diagnostics.error("start symbol is not defined by any production: " + spec.start_symbol);
         return bundle;
     }
+    const auto start_symbol_id = start_symbol->id;
 
     std::string augmented_name = "__start";
     while (grammar.lookup_symbol(augmented_name) != nullptr) {
@@ -262,7 +263,7 @@ GrammarBundle build_grammar(const compilerlab::seuyacc::YaccSpec& spec,
 
     const auto augmented_symbol = grammar.add_nonterminal(augmented_name);
     grammar.set_start_symbol(augmented_symbol);
-    grammar.add_rule(augmented_symbol, {start_symbol->id}, 0);
+    grammar.add_rule(augmented_symbol, {start_symbol_id}, 0);
     bundle.productions.push_back(
         {augmented_symbol, 1, augmented_name + " -> " + spec.start_symbol, "$$ = $1;"});
 
