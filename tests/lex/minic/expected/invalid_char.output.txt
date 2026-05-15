@@ -1,0 +1,2 @@
+KwInt "int" @1:1
+error: invalid token starting at 1:5 -> `@`

@@ -1,0 +1,2 @@
+// comment line
+0x1A2B "hello" alpha + -

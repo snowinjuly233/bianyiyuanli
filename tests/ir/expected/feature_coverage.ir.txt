@@ -1,0 +1,36 @@
+    assign t0 = 1
+    assign seed = t0
+twice_entry:
+    add t1 = x, x
+    ret t1
+main_entry:
+    assign x = seed
+    assign t2 = 0
+    sub t3 = t2, x
+    assign y = t3
+    assign t4 = 3
+    add t5 = y, t4
+    param t5
+    call t6 = twice, 1
+    assign y = t6
+    not t7 = y
+    jmp_false L0 = t7
+    assign t8 = 1
+    add t9 = y, t8
+    assign y = t9
+    jmp L1
+L0:
+    assign t10 = 2
+    mul t11 = y, t10
+    assign y = t11
+L1:
+L2:
+    assign t12 = 0
+    cmp_gt t13 = y, t12
+    jmp_false L3 = t13
+    assign t14 = 1
+    sub t15 = y, t14
+    assign y = t15
+    jmp L2
+L3:
+    ret y
